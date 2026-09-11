@@ -1,0 +1,55 @@
+{
+  "name": "dsh-cache-optimizer",
+  "version": "0.1.0",
+  "description": "Model-aware prompt cache optimizer for DeepSeek Harness, starting with Codex-style OpenAI GPT prefix preservation",
+  "type": "module",
+  "main": "./src/plugin.js",
+  "exports": {
+    ".": "./src/plugin.js",
+    "./policy": "./src/policy.js",
+    "./reorder": "./src/reorder.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/**/*.js",
+    "README.md",
+    "README.en.md",
+    "docs/**/*.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/plugin.js && node --check src/policy.js && node --check src/reorder.js",
+    "packcheck": "npm pack --dry-run --json"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-agent": "*",
+    "@deepseek-ai/dsh-llm": "*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rffanlab/dsh-cache-optimizer.git"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "openai",
+    "gpt",
+    "prompt-cache",
+    "kv-cache",
+    "codex"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
