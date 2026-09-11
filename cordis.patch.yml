@@ -1,0 +1,5 @@
+# dsh-cache-optimizer is a profile bundle. Installing it with `dsh plugin`
+# activates this row automatically; users do not need to edit cordis.yml.
+- insert:
+    - id: dsh-cache-optimizer
+      name: 'dsh-cache-optimizer'
